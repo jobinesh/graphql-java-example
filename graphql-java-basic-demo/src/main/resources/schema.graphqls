@@ -1,0 +1,14 @@
+schema {
+    query: Query   
+}
+
+type Query {
+      departments: [Department!]!
+}
+
+type Department{
+  departmentId: Int!
+  departmentName: String!
+  locationId: Int
+  managerId: Int
+}

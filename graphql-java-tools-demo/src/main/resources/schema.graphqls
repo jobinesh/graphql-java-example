@@ -1,0 +1,51 @@
+schema {
+    query: Query   
+    mutation: Mutation
+}
+
+type Query {
+      departments: [Department!]!  
+      employees: [Employee]!  
+      employeesByFilter(filter: EmployeeFilter):[Employee]!
+}
+
+type Mutation {
+    updateEmployee( input:EmployeeInput ): Employee  
+}
+
+type Department{
+  departmentId: Int!
+  departmentName: String!
+  employees: [Employee]
+  location: Location
+  managerId: Int
+}
+
+type Location{
+    locationId: Int!
+    city: String!
+    country : String!
+}
+
+type Employee{
+  employeeId: Int!
+  firstName: String!
+  lastName: String!
+  email: String!
+  departmentId: Int
+}
+
+input EmployeeFilter{
+   firstName: String
+   lastName: String
+   departmentId: Int
+}
+
+
+input EmployeeInput{
+  employeeId: Int!
+  firstName: String
+  lastName: String
+  email: String
+  departmentId: Int
+}
