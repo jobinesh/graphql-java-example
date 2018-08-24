@@ -1,7 +1,7 @@
 >>mvn jetty:run
 
 Above opertaion starts server
-Now open browser and try: localhost:8080
+Now open URL localhost:8080 in a browser of your choice
 
 Introspection
 -------------
